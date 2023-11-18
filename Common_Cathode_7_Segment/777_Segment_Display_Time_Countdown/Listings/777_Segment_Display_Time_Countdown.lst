@@ -1,0 +1,142 @@
+C51 COMPILER V9.59.0.0   777_SEGMENT_DISPLAY_TIME_COUNTDOWN                                11/18/2023 15:48:57 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE 777_SEGMENT_DISPLAY_TIME_COUNTDOWN
+OBJECT MODULE PLACED IN .\Objects\777_Segment_Display_Time_Countdown.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE 777_Segment_Display_Time_Countdown.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJE
+                    -CTEXTEND PRINT(.\Listings\777_Segment_Display_Time_Countdown.lst) TABS(2) OBJECT(.\Objects\777_Segment_Display_Time_Coun
+                    -tdown.obj)
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          
+   3          sbit start = P3^0;
+   4          sbit reset = P3^1;
+   5          
+   6          sbit unit_segmenet = P3^2;
+   7          sbit tens_segmenet = P3^3;
+   8          sbit hundred_segmenet = P3^4;
+   9          
+  10          void delay(int);
+  11          void main()
+  12          {
+  13   1        
+  14   1        unsigned int Segment_data[10] = {0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F}, sec_count, 
+             -min_count, delayer;
+  15   1        
+  16   1        P1 = 0x00;
+  17   1        while(1)
+  18   1        {
+  19   2          if(start == 0 && reset == 1)
+  20   2          {
+  21   3            for(min_count = 2; min_count < -1; min_count--)
+  22   3            {
+  23   4              if(min_count == 2)
+  24   4              {
+  25   5                for(delayer = 0; delayer < 50; delayer++)
+  26   5                  {
+  27   6                    P1 = Segment_data[min_count];
+  28   6                    unit_segmenet = 0;
+  29   6                    tens_segmenet = 0;
+  30   6                    hundred_segmenet = 1;
+  31   6                    delay(1);
+  32   6                    
+  33   6                    P1 = Segment_data[0];
+  34   6                    unit_segmenet = 1;
+  35   6                    tens_segmenet = 0;
+  36   6                    hundred_segmenet = 0;
+  37   6                    
+  38   6                    delay(1);
+  39   6                    
+  40   6                    P1 = Segment_data[0];
+  41   6                    unit_segmenet = 0;
+  42   6                    tens_segmenet = 1;
+  43   6                    hundred_segmenet = 0;
+  44   6                    delay(1);
+  45   6                  }
+  46   5              }
+  47   4              else if (min_count < 2)
+  48   4              {
+  49   5                for(sec_count = 59; sec_count < 61 && sec_count < -1; sec_count--)
+  50   5              {
+  51   6                for(delayer = 0; delayer < 25; delayer++)
+  52   6                  {
+C51 COMPILER V9.59.0.0   777_SEGMENT_DISPLAY_TIME_COUNTDOWN                                11/18/2023 15:48:57 PAGE 2   
+
+  53   7                    P1 = Segment_data[min_count];
+  54   7                    unit_segmenet = 0;
+  55   7                    tens_segmenet = 0;
+  56   7                    hundred_segmenet =1;
+  57   7                    delay(1);
+  58   7                    
+  59   7                    P1 = Segment_data[sec_count % 10];
+  60   7                    unit_segmenet = 1;
+  61   7                    tens_segmenet = 0;
+  62   7                    hundred_segmenet = 0;
+  63   7                    
+  64   7                    delay(1);
+  65   7                    
+  66   7                    P1 = Segment_data[sec_count / 10];
+  67   7                    unit_segmenet = 0;
+  68   7                    tens_segmenet = 1;
+  69   7                    hundred_segmenet = 0;
+  70   7                    delay(1);
+  71   7                  }
+  72   6                  delay(5);
+  73   6                }
+  74   5              }
+  75   4            }
+  76   3          }
+  77   2          
+  78   2          else if (reset == 0)
+  79   2          {
+  80   3                    for(;start == 1;)
+  81   3            {
+  82   4              P1 = Segment_data[2];
+  83   4                    unit_segmenet = 0;
+  84   4                    tens_segmenet = 0;
+  85   4                    hundred_segmenet = 1;
+  86   4                    delay(1);
+  87   4                    
+  88   4                    P1 = Segment_data[0];
+  89   4                    unit_segmenet = 1;
+  90   4                    tens_segmenet = 0;
+  91   4                    hundred_segmenet = 0;
+  92   4                    
+  93   4                    delay(1);
+  94   4                    
+  95   4                    P1 = Segment_data[0];
+  96   4                    unit_segmenet = 0;
+  97   4                    tens_segmenet = 1;
+  98   4                    hundred_segmenet = 0;
+  99   4                    delay(1);
+ 100   4            } 
+ 101   3          }
+ 102   2        }
+ 103   1      }
+ 104          
+ 105          void delay(int time)
+ 106          {
+ 107   1        int i,j;
+ 108   1        for(i = 0; i < time; i++)
+ 109   1        {
+ 110   2          for(j = 0; j < 1000; j++);
+ 111   2        }
+ 112   1      }
+
+
+C51 COMPILER V9.59.0.0   777_SEGMENT_DISPLAY_TIME_COUNTDOWN                                11/18/2023 15:48:57 PAGE 3   
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    369    ----
+   CONSTANT SIZE    =     20    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      26
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

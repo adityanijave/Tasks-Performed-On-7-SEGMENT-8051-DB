@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\Alternating_and_Shifting_LED_and_7_Segment_Display.obj" 
+TO ".\Objects\Alternating_and_Shifting_LED_and_7_Segment_Display" 
+PRINT(".\Listings\Alternating_and_Shifting_LED_and_7_Segment_Display.m51")

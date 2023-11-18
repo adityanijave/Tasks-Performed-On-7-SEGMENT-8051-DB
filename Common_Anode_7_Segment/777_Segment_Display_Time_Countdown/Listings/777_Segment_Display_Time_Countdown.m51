@@ -1,0 +1,237 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    11/18/2023  16:05:25  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\777_Segment_Display_Time_Countdown.obj TO .\Objects\777_Seg
+>> ment_Display_Time_Countdown PRINT (.\Listings\777_Segment_Display_Time_Countdown.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\777_Segment_Display_Time_Countdown.obj (777_SEGMENT_DISPLAY_TIME_COUNTDOWN)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?UIDIV)
+
+
+LINK MAP OF MODULE:  .\Objects\777_Segment_Display_Time_Countdown (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     001AH     UNIT         _DATA_GROUP_
+            IDATA   0022H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     014BH     UNIT         ?C?LIB_CODE
+            CODE    094BH     0136H     UNIT         ?PR?MAIN?777_SEGMENT_DISPLAY_TIME_COUNTDOWN
+            CODE    0A81H     003BH     UNIT         ?PR?_DELAY?777_SEGMENT_DISPLAY_TIME_COUNTDOWN
+            CODE    0ABCH     0014H     UNIT         ?CO?777_SEGMENT_DISPLAY_TIME_COUNTDOWN
+            CODE    0AD0H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\777_Segment_Display_Time_Countdown (?C_STARTUP)
+
+
+SEGMENT                                            DATA_GROUP 
+  +--> CALLED SEGMENT                            START    LENGTH
+----------------------------------------------------------------
+?C_C51STARTUP                                    -----    -----
+  +--> ?PR?MAIN?777_SEGMENT_DISPLAY_TIME_COU...
+
+?PR?MAIN?777_SEGMENT_DISPLAY_TIME_COU...         0008H    001AH
+  +--> ?CO?777_SEGMENT_DISPLAY_TIME_COUNTDOWN
+  +--> ?PR?_DELAY?777_SEGMENT_DISPLAY_TIME_C...
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\777_Segment_Display_Time_Countdown (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/18/2023  16:05:25  PAGE 2
+
+
+  C:0AD0H         SEGMENT       ?C_C51STARTUP
+  I:0022H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0AD3H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0AD0H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0AD0H         LINE#         133
+  C:0AD2H         LINE#         134
+  C:0AD3H         LINE#         135
+  C:0AD4H         LINE#         136
+  C:0AD6H         LINE#         185
+  C:0AD9H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        777_SEGMENT_DISPLAY_TIME_COUNTDOWN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:00B0H.2       PUBLIC        unit_segmenet
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  C:0A96H         PUBLIC        _delay
+  B:00B0H.1       PUBLIC        reset
+  C:094BH         PUBLIC        main
+  B:00B0H.4       PUBLIC        hundred_segmenet
+  B:00B0H.0       PUBLIC        start
+  C:0ABCH         SYMBOL        _?ix1000
+  B:00B0H.3       PUBLIC        tens_segmenet
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        Segment_data
+  D:001CH         SYMBOL        sec_count
+  D:001EH         SYMBOL        min_count
+  D:0020H         SYMBOL        delayer
+  -------         ENDDO         
+  C:094BH         LINE#         11
+  C:094BH         LINE#         12
+  C:094BH         LINE#         14
+  C:095EH         LINE#         16
+  C:0961H         LINE#         17
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/18/2023  16:05:25  PAGE 3
+
+
+  C:0961H         LINE#         18
+  C:0961H         LINE#         19
+  C:096DH         LINE#         20
+  C:096DH         LINE#         21
+  C:097EH         LINE#         22
+  C:097EH         LINE#         23
+  C:0986H         LINE#         24
+  C:0986H         LINE#         25
+  C:098AH         LINE#         26
+  C:098AH         LINE#         27
+  C:098AH         LINE#         28
+  C:098AH         LINE#         29
+  C:098AH         LINE#         30
+  C:098AH         LINE#         31
+  C:098DH         LINE#         33
+  C:0990H         LINE#         34
+  C:0992H         LINE#         35
+  C:0994H         LINE#         36
+  C:0996H         LINE#         38
+  C:0999H         LINE#         40
+  C:099CH         LINE#         41
+  C:099EH         LINE#         42
+  C:09A0H         LINE#         43
+  C:09A2H         LINE#         44
+  C:09A5H         LINE#         45
+  C:09B9H         LINE#         46
+  C:09B9H         LINE#         47
+  C:09C7H         LINE#         48
+  C:09C7H         LINE#         49
+  C:09E3H         LINE#         50
+  C:09E3H         LINE#         51
+  C:09E8H         LINE#         52
+  C:09E8H         LINE#         53
+  C:09E8H         LINE#         54
+  C:09E8H         LINE#         55
+  C:09E8H         LINE#         56
+  C:09E8H         LINE#         57
+  C:09EBH         LINE#         59
+  C:0A00H         LINE#         60
+  C:0A02H         LINE#         61
+  C:0A04H         LINE#         62
+  C:0A06H         LINE#         64
+  C:0A09H         LINE#         66
+  C:0A1EH         LINE#         67
+  C:0A20H         LINE#         68
+  C:0A22H         LINE#         69
+  C:0A24H         LINE#         70
+  C:0A27H         LINE#         71
+  C:0A38H         LINE#         72
+  C:0A3FH         LINE#         73
+  C:0A4AH         LINE#         74
+  C:0A4AH         LINE#         75
+  C:0A55H         LINE#         76
+  C:0A55H         LINE#         78
+  C:0A5BH         LINE#         79
+  C:0A5BH         LINE#         80
+  C:0A61H         LINE#         81
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  11/18/2023  16:05:25  PAGE 4
+
+
+  C:0A61H         LINE#         82
+  C:0A64H         LINE#         83
+  C:0A64H         LINE#         84
+  C:0A64H         LINE#         85
+  C:0A64H         LINE#         86
+  C:0A67H         LINE#         88
+  C:0A6AH         LINE#         89
+  C:0A6CH         LINE#         90
+  C:0A6EH         LINE#         91
+  C:0A70H         LINE#         93
+  C:0A73H         LINE#         95
+  C:0A76H         LINE#         96
+  C:0A78H         LINE#         97
+  C:0A7AH         LINE#         98
+  C:0A7CH         LINE#         99
+  C:0A7FH         LINE#         100
+  -------         ENDPROC       MAIN
+  C:0A8CH         SYMBOL        L?0038
+  C:0A92H         SYMBOL        L?0039
+  -------         PROC          L?0037
+  -------         ENDPROC       L?0037
+  C:0A8CH         SYMBOL        L?0038
+  C:0A92H         SYMBOL        L?0039
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0A96H         LINE#         105
+  C:0A96H         LINE#         106
+  C:0A96H         LINE#         108
+  C:0AA6H         LINE#         109
+  C:0AA6H         LINE#         110
+  C:0AB4H         LINE#         111
+  C:0ABBH         LINE#         112
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        777_SEGMENT_DISPLAY_TIME_COUNTDOWN
+
+  -------         MODULE        ?C?COPY
+  C:08D0H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+  -------         MODULE        ?C?UIDIV
+  C:08F6H         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0194H BYTE (19%) *
+******************************************************************************
+
+Program Size: data=35.0 xdata=0 code=735
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

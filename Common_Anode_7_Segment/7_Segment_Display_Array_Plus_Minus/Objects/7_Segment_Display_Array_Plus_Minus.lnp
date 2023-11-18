@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\7_Segment_Display_Array_Plus_Minus.obj" 
+TO ".\Objects\7_Segment_Display_Array_Plus_Minus" 
+PRINT(".\Listings\7_Segment_Display_Array_Plus_Minus.m51")

@@ -1,0 +1,271 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    09/20/2023  17:49:27  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\SETUPS\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\Alternating_and_Shifting_LED_and_7_Segment_Display.obj TO .\
+>> Objects\Alternating_and_Shifting_LED_and_7_Segment_Display PRINT (.\Listings\Alternating_and_Shifting_LED_and_7_Segme
+>> nt_Display.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\Alternating_and_Shifting_LED_and_7_Segment_Display.obj (ALTERNATING_AND_SHIFTING_LED_AND_7_SEGMEN)
+  D:\SETUPS\C51\LIB\C51S.LIB (?C?SLCMP)
+
+
+LINK MAP OF MODULE:  .\Objects\Alternating_and_Shifting_LED_and_7_Segment_Display (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     01DFH     UNIT         ?PR?SEVEN_SEGMENT_DISPLAY?ALTERNATING_AND_SHIFTING_LED_AND_7_SEGMEN
+>> 
+            CODE    09DFH     00EFH     UNIT         ?PR?SHIFTING_LED_RIGHT_2_LEFT?ALTERNATING_AND_SHIFTING_LED_AND_7_SE
+>> GMEN
+            CODE    0ACEH     00EFH     UNIT         ?PR?SHIFTING_LED_LEFT_2_RIGHT?ALTERNATING_AND_SHIFTING_LED_AND_7_SE
+>> GMEN
+            CODE    0BBDH     003BH     UNIT         ?PR?ALTERNATING_LED?ALTERNATING_AND_SHIFTING_LED_AND_7_SEGMEN
+            CODE    0BF8H     0032H     UNIT         ?PR?MAIN?ALTERNATING_AND_SHIFTING_LED_AND_7_SEGMEN
+            CODE    0C2AH     0016H     UNIT         ?C?LIB_CODE
+            CODE    0C40H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Alternating_and_Shifting_LED_and_7_Segment_Display (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?ALTERNATING_AND_SHIFTING_LED...
+
+?PR?MAIN?ALTERNATING_AND_SHIFTING_LED...
+  +--> ?PR?ALTERNATING_LED?ALTERNATING_AND_S...
+  +--> ?PR?SHIFTING_LED_RIGHT_2_LEFT?ALTERNA...
+  +--> ?PR?SHIFTING_LED_LEFT_2_RIGHT?ALTERNA...
+  +--> ?PR?SEVEN_SEGMENT_DISPLAY?ALTERNATING...
+
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/20/2023  17:49:27  PAGE 2
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Alternating_and_Shifting_LED_and_7_Segment_Display (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0C40H         SEGMENT       ?C_C51STARTUP
+  I:0008H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0C43H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0C40H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0C40H         LINE#         133
+  C:0C42H         LINE#         134
+  C:0C43H         LINE#         135
+  C:0C44H         LINE#         136
+  C:0C46H         LINE#         185
+  C:0C49H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        ALTERNATING_AND_SHIFTING_LED_AND_7_SEGMEN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0800H         PUBLIC        seven_Segment_Display
+  B:0090H.0       PUBLIC        sw1
+  B:0090H.2       PUBLIC        sw2
+  B:0090H.4       PUBLIC        sw3
+  B:0090H.6       PUBLIC        sw4
+  C:0BF8H         PUBLIC        main
+  C:0ACEH         PUBLIC        shifting_LED_left_2_right
+  C:09DFH         PUBLIC        shifting_LED_right_2_left
+  C:0BBDH         PUBLIC        alternating_LED
+  -------         PROC          MAIN
+  C:0BF8H         LINE#         16
+  C:0BF8H         LINE#         17
+  C:0BF8H         LINE#         18
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/20/2023  17:49:27  PAGE 3
+
+
+  C:0BFBH         LINE#         19
+  C:0BFDH         LINE#         20
+  C:0BFDH         LINE#         21
+  C:0BFDH         LINE#         22
+  C:0C00H         LINE#         23
+  C:0C00H         LINE#         24
+  C:0C03H         LINE#         25
+  C:0C03H         LINE#         26
+  C:0C05H         LINE#         27
+  C:0C08H         LINE#         28
+  C:0C08H         LINE#         29
+  C:0C0BH         LINE#         30
+  C:0C0BH         LINE#         31
+  C:0C0DH         LINE#         32
+  C:0C10H         LINE#         33
+  C:0C10H         LINE#         34
+  C:0C13H         LINE#         35
+  C:0C16H         LINE#         36
+  C:0C18H         LINE#         37
+  C:0C1BH         LINE#         38
+  C:0C1BH         LINE#         39
+  C:0C1EH         LINE#         40
+  C:0C21H         LINE#         41
+  C:0C23H         LINE#         43
+  C:0C23H         LINE#         44
+  C:0C26H         LINE#         45
+  C:0C28H         LINE#         46
+  C:0C28H         LINE#         47
+  -------         ENDPROC       MAIN
+  -------         PROC          ALTERNATING_LED
+  -------         DO            
+  D:0082H         SYMBOL        i
+  -------         ENDDO         
+  C:0BBDH         LINE#         50
+  C:0BBDH         LINE#         51
+  C:0BBDH         LINE#         54
+  C:0BC0H         LINE#         55
+  C:0BD9H         LINE#         57
+  C:0BDCH         LINE#         58
+  C:0BF7H         LINE#         59
+  -------         ENDPROC       ALTERNATING_LED
+  -------         PROC          SHIFTING_LED_RIGHT_2_LEFT
+  -------         DO            
+  D:0082H         SYMBOL        i
+  -------         ENDDO         
+  C:09DFH         LINE#         61
+  C:09DFH         LINE#         62
+  C:09DFH         LINE#         65
+  C:09E2H         LINE#         66
+  C:09FBH         LINE#         68
+  C:09FEH         LINE#         69
+  C:0A19H         LINE#         71
+  C:0A1CH         LINE#         72
+  C:0A37H         LINE#         74
+  C:0A3AH         LINE#         75
+  C:0A55H         LINE#         77
+  C:0A58H         LINE#         78
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/20/2023  17:49:27  PAGE 4
+
+
+  C:0A73H         LINE#         80
+  C:0A76H         LINE#         81
+  C:0A91H         LINE#         83
+  C:0A94H         LINE#         84
+  C:0AAFH         LINE#         86
+  C:0AB2H         LINE#         87
+  C:0ACDH         LINE#         88
+  -------         ENDPROC       SHIFTING_LED_RIGHT_2_LEFT
+  -------         PROC          SHIFTING_LED_LEFT_2_RIGHT
+  -------         DO            
+  D:0082H         SYMBOL        i
+  -------         ENDDO         
+  C:0ACEH         LINE#         90
+  C:0ACEH         LINE#         91
+  C:0ACEH         LINE#         94
+  C:0AD1H         LINE#         95
+  C:0AEAH         LINE#         97
+  C:0AEDH         LINE#         98
+  C:0B08H         LINE#         100
+  C:0B0BH         LINE#         101
+  C:0B26H         LINE#         103
+  C:0B29H         LINE#         104
+  C:0B44H         LINE#         106
+  C:0B47H         LINE#         107
+  C:0B62H         LINE#         109
+  C:0B65H         LINE#         110
+  C:0B80H         LINE#         112
+  C:0B83H         LINE#         113
+  C:0B9EH         LINE#         115
+  C:0BA1H         LINE#         116
+  C:0BBCH         LINE#         117
+  -------         ENDPROC       SHIFTING_LED_LEFT_2_RIGHT
+  -------         PROC          SEVEN_SEGMENT_DISPLAY
+  -------         DO            
+  D:0082H         SYMBOL        i
+  -------         ENDDO         
+  C:0800H         LINE#         120
+  C:0800H         LINE#         121
+  C:0800H         LINE#         123
+  C:0803H         LINE#         124
+  C:081CH         LINE#         126
+  C:081FH         LINE#         127
+  C:083AH         LINE#         129
+  C:083DH         LINE#         130
+  C:0858H         LINE#         132
+  C:085BH         LINE#         133
+  C:0876H         LINE#         135
+  C:0879H         LINE#         136
+  C:0894H         LINE#         138
+  C:0897H         LINE#         139
+  C:08B2H         LINE#         141
+  C:08B5H         LINE#         142
+  C:08D0H         LINE#         144
+  C:08D3H         LINE#         145
+  C:08EEH         LINE#         147
+  C:08F1H         LINE#         148
+  C:090CH         LINE#         150
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/20/2023  17:49:27  PAGE 5
+
+
+  C:090FH         LINE#         151
+  C:092AH         LINE#         153
+  C:092DH         LINE#         154
+  C:0948H         LINE#         156
+  C:094BH         LINE#         157
+  C:0966H         LINE#         159
+  C:0969H         LINE#         160
+  C:0984H         LINE#         162
+  C:0987H         LINE#         163
+  C:09A2H         LINE#         165
+  C:09A5H         LINE#         166
+  C:09C0H         LINE#         168
+  C:09C3H         LINE#         169
+  C:09DEH         LINE#         170
+  -------         ENDPROC       SEVEN_SEGMENT_DISPLAY
+  -------         ENDMOD        ALTERNATING_AND_SHIFTING_LED_AND_7_SEGMEN
+
+  -------         MODULE        ?C?SLCMP
+  C:0C2AH         PUBLIC        ?C?SLCMP
+  -------         ENDMOD        ?C?SLCMP
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0439H BYTE (52%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=1103
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
